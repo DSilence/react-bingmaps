@@ -18,6 +18,12 @@ class App extends Component {
           "location":[13.0827, 80.2707], "option":{ color: 'red' }, "addHandler": {"type" : "click", callback: this.callBackMethod }
         }
       ],
+      irregularPolygons:[
+        {
+          "location": [[13.0827, 80.2707],[13.0527, 80.2707], [13.0627, 80.2707], [13.0827, 80.2707]],
+          "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
+        }
+      ],
       regularPolygons:[
         {
           "center":[13.0827, 80.2707],
@@ -88,6 +94,12 @@ class App extends Component {
           "radius":5,
           "points":6,
           "option": {fillColor: "rgba(0,0,0,0.5)", strokeThickness: 2}
+        }
+      ],
+      irregularPolygons:[
+        {
+          "location": [[13.0827, 80.2707],[13.0527, 80.2707], [13.0627, 80.2707], [13.0827, 80.2707]],
+          "option": { strokeColor: 'red', strokeThickness: 10, strokeDashArray: [1, 2, 5, 10] }
         }
       ],
       infoboxesWithPushPins: [
@@ -178,6 +190,7 @@ class App extends Component {
               bingmapKey = {this.state.bingmapKey} 
               center = {[13.0827, 80.2707]}
               zoom = {4}
+              irregularPolygons = {this.state.irregularPolygons}
               className = "customClass"
             > 
             </ReactBingmaps>
@@ -200,6 +213,7 @@ class App extends Component {
               id = "three"
               center = {[13.0827, 80.2707]}
               className = "customClass"
+              irregularPolygons = {this.state.irregularPolygons}
               bingmapKey = {this.state.bingmapKey} 
               infoboxes = {this.state.infoboxes }
             > 
@@ -284,6 +298,7 @@ class App extends Component {
               center = {[13.0827, 80.2707]}
               bingmapKey = {this.state.bingmapKey}
               polyline = {this.state.polyline}
+              irregularPolygons = {this.state.irregularPolygons}
             > 
             </ReactBingmaps>
           </div><div className = "map-two">
